@@ -31,6 +31,7 @@ const checkIfProjectIdExists = (req, res, next)=>{
 };
 
 /**
+ * Request body: id, title
  * Creates a new project
  */
 app.post('/projects', (req,res) =>{
@@ -58,6 +59,8 @@ app.get('/projects',(req,res)=>{
 });
 
 /**
+ * Route params: id
+ * Request body: title
  * Edit project's title
  */
 app.put('/projects/:id', checkIfProjectIdExists, (req,res)=>{
@@ -75,6 +78,8 @@ app.put('/projects/:id', checkIfProjectIdExists, (req,res)=>{
 });
 
 /**
+ * Route params: id
+ * Request body: title
  * Add a task for specific project's id
  */
 app.post('/projects/:id/tasks', checkIfProjectIdExists, (req,res)=>{
@@ -91,6 +96,7 @@ app.post('/projects/:id/tasks', checkIfProjectIdExists, (req,res)=>{
 });
 
 /**
+ * Route params: id
  * Remove specific project with informed id
  */
 app.delete('/projects/:id', checkIfProjectIdExists, (req,res)=>{
